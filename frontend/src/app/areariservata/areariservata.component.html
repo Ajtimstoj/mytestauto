@@ -1,4 +1,67 @@
-<p>
-  AREA RISERVATA works!
-  Angular html component
-</p>
+<div class="modal-header">
+    <h4 class="modal-title">My Form</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <form #myForm="ngForm" (ngSubmit)="submitForm()">
+    <div class="modal-boy">
+      <div class="container">
+
+          <!-- <input id="email" name="email" class="form-control"
+          [(ngModel)]="areariservatadto.email" #name="ngModel" > -->
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" class="form-control"
+          [(ngModel)]="areariservatadto.email" #name="ngModel" >
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" class="form-control"
+            [(ngModel)]="areariservatadto.password" #name="ngModel" >
+          </div>
+
+          <div class="form-group">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" class="form-control"
+              [(ngModel)]="areariservatadto.nome" #name="ngModel" >
+            </div>
+
+            <div class="form-group">
+                <label for="cognome">Cognome</label>
+                <input id="cognome" name="cognome" class="form-control"
+                [(ngModel)]="areariservatadto.cognome" #name="ngModel" >
+              </div>
+        <!--<div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control">
+          </div>
+  
+          <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" 
+                class="form-control"
+                formControlName="nome" />
+            </div>
+  
+            <div class="form-group">
+                <label for="cognome">Cognome</label>
+                <input type="text" 
+                  class="form-control"
+                  formControlName="cognome" />
+              </div> -->
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="mx-auto btn btn-secondary" aria-label="Close"
+        (click)="activeModal.dismiss('Cross click')"> Close
+       </button>
+      <button class="btn btn-success"
+        [disabled]="!myForm.valid">
+        Submit Form
+      </button>
+    </div>
+  </form>

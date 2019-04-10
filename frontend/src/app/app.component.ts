@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { WpApiPosts } from 'wp-api-angular';
 import { WpApiCustom } from 'wp-api-angular';
 import 'rxjs/add/operator/toPromise';
-import { TokenStorageService } from './auth/token-storage.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-root',
@@ -25,26 +26,15 @@ import { TokenStorageService } from './auth/token-storage.service';
 //       });
 //   }
 // }
+
 export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    // throw new Error("Method not implemented.");
+    console.log('appComponent init');
+  }
   private roles: string[];
   private authority: string;
+
+  constructor(private modalService: NgbModal) { }
  
-  constructor(private tokenStorage: TokenStorageService) { }
- 
-  ngOnInit() {
-    if (this.tokenStorage.getToken()) {
-      this.roles = this.tokenStorage.getAuthorities();
-      this.roles.every(role => {
-        if (role === 'ROLE_ADMIN') {
-          this.authority = 'admin';
-          return false;
-        } else if (role === 'ROLE_PM') {
-          this.authority = 'pm';
-          return false;
-        }
-        this.authority = 'user';
-        return true;
-      });
-    }
-  }
 }

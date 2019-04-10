@@ -1,0 +1,9 @@
+ 
+
+.container-fluid{
+    background-color: black;
+  }
+
+.navbar.navbar-inverse{
+    padding-top: 80px;
+}
