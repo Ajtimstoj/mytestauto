@@ -9,27 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreariservataComponent implements OnInit {
 
-  //hero = {email: 'Email', password: 'Password', nome: 'Nome', congnome: 'Congnome'};
-  areariservatadto:AreariservataDTO;
+  areariservatadto: AreariservataDTO;
 
-  constructor(public service: AreariservataService) { 
+  constructor(public service: AreariservataService) {
   }
 
   ngOnInit() {
     this.areariservatadto = new AreariservataDTO();
-    this.areariservatadto.email='';
+    this.areariservatadto.email = '';
   }
-  
-  submitForm(){
+
+  submitForm() {
     this.service.addUser(this.areariservatadto) // Tu kličemo service ... addUser
     .subscribe(result => {
-      if(result != null && result.message != null && result.message != '') {
+      if (result != null && result.message != null && result.message !== '') {
         this.areariservatadto.email = result.message;
       }
     });
     // console.log(this.areariservatadto.email);
   }
-
-
-
 }

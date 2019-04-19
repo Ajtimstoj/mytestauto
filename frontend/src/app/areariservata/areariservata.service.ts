@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
 
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-//import { Hero } from './hero';
 
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 import { AreariservataDTO } from './areariservata.model';
@@ -69,8 +67,6 @@ export class AreariservataService {
       );
   }
 
-  
-
 //   /** DELETE: delete the hero from the server */
 //   deleteHero (id: number): Observable<{}> {
 //     const url = `${this.heroesUrl}/${id}`; // DELETE api/heroes/42
@@ -90,13 +86,4 @@ export class AreariservataService {
 //         catchError(this.handleError('updateHero', hero))
 //       );
 //   }
-
-
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { WpApiPosts } from 'wp-api-angular';
-import { WpApiCustom } from 'wp-api-angular';
 import 'rxjs/add/operator/toPromise';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -32,9 +30,9 @@ export class AppComponent implements OnInit {
     // throw new Error("Method not implemented.");
     console.log('appComponent init');
   }
-  private roles: string[];
-  private authority: string;
+  // private roles: string[];
+  // private authority: string;
 
   constructor(private modalService: NgbModal) { }
- 
+
 }
