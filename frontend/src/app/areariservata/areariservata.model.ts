@@ -3,4 +3,6 @@ export class AreariservataDTO {
     password: string | undefined | null;
     nome: string | undefined | null;
     congnome: string | undefined | null;
+    privacy: boolean | undefined | null;
+    condizioni: boolean | undefined | null;
   }

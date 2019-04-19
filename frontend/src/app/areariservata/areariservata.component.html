@@ -7,10 +7,6 @@
   <form #myForm="ngForm" (ngSubmit)="submitForm()">
     <div class="modal-boy">
       <div class="container">
-
-          <!-- <input id="email" name="email" class="form-control"
-          [(ngModel)]="areariservatadto.email" #name="ngModel" > -->
-        
         <div class="form-group">
           <label for="email">Email</label>
           <input id="email" name="email" class="form-control"
@@ -34,34 +30,18 @@
                 <input id="cognome" name="cognome" class="form-control"
                 [(ngModel)]="areariservatadto.cognome" #name="ngModel" >
               </div>
-        <!--<div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control">
-          </div>
-  
-          <div class="form-group">
-              <label for="nome">Nome</label>
-              <input type="text" 
-                class="form-control"
-                formControlName="nome" />
-            </div>
-  
-            <div class="form-group">
-                <label for="cognome">Cognome</label>
-                <input type="text" 
-                  class="form-control"
-                  formControlName="cognome" />
-              </div> -->
-        
       </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="mx-auto btn btn-secondary" aria-label="Close"
-        (click)="activeModal.dismiss('Cross click')"> Close
-       </button>
+
+      <p class="checkbox">
+          <input required type="checkbox" name="privacy"  [(ngModel)]="areariservatadto.privacy">Dichiaro di avere letto l'informativa sulla privacy ed autorizzo il trattamento dei miei dati.<br>
+          <input required type="checkbox" name="condizioni"  [(ngModel)]="areariservatadto.condizioni">Dichiaro di avere letto e di accettare termini e condizioni.<br>
+      </p>
+
       <button class="btn btn-success"
         [disabled]="!myForm.valid">
-        Submit Form
+        Registrati
       </button>
     </div>
   </form>

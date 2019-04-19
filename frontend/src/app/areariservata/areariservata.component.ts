@@ -19,9 +19,9 @@ export class AreariservataComponent implements OnInit {
     this.areariservatadto = new AreariservataDTO();
     this.areariservatadto.email='';
   }
-
+  
   submitForm(){
-    this.service.addUser(this.areariservatadto)
+    this.service.addUser(this.areariservatadto) // Tu kličemo service ... addUser
     .subscribe(result => {
       if(result != null && result.message != null && result.message != '') {
         this.areariservatadto.email = result.message;

@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { Http } from '@angular/http';
 import { AreariservataService } from './areariservata/areariservata.service';
 import { HttpErrorHandler } from './http-error-handler.service';
 import { MessageService } from './message.service';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -37,7 +39,9 @@ export function WpApiLoaderFactory(http: Http) {
   [
     NgbModule.forRoot(),
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    MatCheckboxModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
